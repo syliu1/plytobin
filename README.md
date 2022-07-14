@@ -13,9 +13,7 @@ Ensure all ply files are in the same folder accessible by this repo.
 ## Convert `.ply` to `.bin`
 Usage:
 
-Alter ```python
- INPUT_DIR``` and ```python
- OUTPUT_DIR``` variables to be the path to .ply input folder, and the output folder respectively.
+Alter ```INPUT_DIR``` and ```OUTPUT_DIR``` variables to be the path to .ply input folder, and the output folder respectively.
 
 ```bash
 python ply2bin.py 
