@@ -1,28 +1,34 @@
 import os
 import subprocess
+import open3d as o3d
+import shutil 
+from pathlib import Path
 
-package = 'pcl_convert_pcd_ascii_binary'
-input_dir = 'A:/kitti-velodyne-viewer/test'
-output_dir = 'A:/kitti-velodyne-viewer/test_out'
+PACKAGE = 'pcl_convert_pcd_ascii_binary'
+PCD_DIR = './pcd_files/'
 
-# Available conversion formats
-asciiFormat = '0'
-binaryFormat = '1'
-binaryCompressedFormat = '2'
+INPUT_DIR = 'A:/kitti-velodyne-viewer/ply'
+OUTPUT_DIR = 'A:/kitti-velodyne-viewer/test_out'
 
-formatChoice = binaryFormat
+formatChoice = '1'
 
-for pcd in os.listdir(input_dir):
+if not os.path.exists(PCD_DIR):
+    os.mkdir(PCD_DIR)
+
+for ply in os.listdir(INPUT_DIR):
     
-    print('Converting pcd :', pcd)
-    #inputPCD = input_dir + '/' + pcd
-    #outputPCD = output_dir + '/' + 'binComp.bin'
+    pcd = o3d.io.read_point_cloud(os.path.join(INPUT_DIR, ply))
+    o3d.io.write_point_cloud(f"{PCD_DIR}{Path(ply).stem}.pcd", pcd)
 
-    inputPCD = os.path.join(input_dir, pcd)
-    outputPCD = os.path.join(output_dir, os.path.basename(inputPCD))
+for pcd in os.listdir(PCD_DIR):
+    
+    print('Converting ply :', pcd)
 
+    inputPCD = os.path.join(PCD_DIR, f"{Path(pcd).stem}.pcd")
+    outputPCD = os.path.join(OUTPUT_DIR, f"{Path(inputPCD).stem}.bin")
+    
     # PCL command
-    command = [package,
+    command = [PACKAGE,
                inputPCD,
                outputPCD,
                formatChoice]
@@ -30,4 +36,6 @@ for pcd in os.listdir(input_dir):
     subprocess.call(command)
     break
 
+# Cleanup
 os.remove(inputPCD)
+shutil.rmtree("./pcd_files")
