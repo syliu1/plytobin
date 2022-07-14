@@ -1,10 +1,6 @@
-"""
-Script to convert multiple PCD files into other formats using PCL
-"""
 import os
 import subprocess
 
-# Make sure you have PCL installed
 package = 'pcl_convert_pcd_ascii_binary'
 input_dir = 'A:/kitti-velodyne-viewer/test'
 output_dir = 'A:/kitti-velodyne-viewer/test_out'
