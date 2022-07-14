@@ -4,7 +4,7 @@ Convert ply files to bin files
 
 ## Requirements and Setup
 
-- [PCL] (https://pointclouds.org/downloads/)
+- [PCL](https://pointclouds.org/downloads/)
 - Python 3.6 - 3.9 (Tested on Python 3.7)
 - ```pip install -r requirements.txt```
 
