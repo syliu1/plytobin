@@ -15,6 +15,9 @@ formatChoice = '1'
 if not os.path.exists(PCD_DIR):
     os.mkdir(PCD_DIR)
 
+if not os.path.exists(OUTPUT_DIR):
+    os.mkdir(OUTPUT_DIR)
+
 for ply in os.listdir(INPUT_DIR):
     
     pcd = o3d.io.read_point_cloud(os.path.join(INPUT_DIR, ply))
@@ -27,14 +30,13 @@ for pcd in os.listdir(PCD_DIR):
     inputPCD = os.path.join(PCD_DIR, f"{Path(pcd).stem}.pcd")
     outputPCD = os.path.join(OUTPUT_DIR, f"{Path(inputPCD).stem}.bin")
     
-    # PCL command
+    # Convert to bin
     command = [PACKAGE,
                inputPCD,
                outputPCD,
                formatChoice]
 
     subprocess.call(command)
-    break
 
 # Cleanup
 os.remove(inputPCD)
