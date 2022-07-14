@@ -40,4 +40,4 @@ for pcd in os.listdir(PCD_DIR):
 
 # Cleanup
 os.remove(inputPCD)
-shutil.rmtree("./pcd_files")
+shutil.rmtree(PCD_DIR)
