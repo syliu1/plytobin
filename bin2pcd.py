@@ -1,7 +1,6 @@
 import numpy as np
 import open3d as o3d
 import struct
-from open3d import geometry, utility
 
 def numpy_bin_to_pcd(binPath):
     # Load binary point cloud
@@ -30,5 +29,5 @@ def byte_bin_to_pcd(binFileName):
     pcd.points = o3d.utility.Vector3dVector(np_pcd)
     return pcd
 
-print(numpy_bin_to_pcd("A:/kitti-velodyne-viewer/test_out/00000.bin"))
-#print(byte_bin_to_pcd("A:/kitti-velodyne-viewer/test_out/00000.bin"))
+#print(numpy_bin_to_pcd("C:\\Users\\Stanl\\Downloads\\data_object_velodyne\\testing\\velodyne\\000000.bin"))
+#print(byte_bin_to_pcd("C:\\Users\\Stanl\\Downloads\\data_object_velodyne\\testing\\velodyne\\000000.bin"))
