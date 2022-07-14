@@ -2,16 +2,13 @@
 
 Convert ply files to bin files
 
-## Requirements
+## Requirements and Setup
 
-The code requires the PCL library to be installed (https://pointclouds.org/downloads/) and Python 3.6 - 3.9 (Code was tested on Python 3.7)
-
-## Dataset
-
-Ensure all ply files are in the same folder accessible by this repo.
+- [PCL] (https://pointclouds.org/downloads/)
+- Python 3.6 - 3.9 (Tested on Python 3.7)
+- ```pip install -r requirements.txt```
 
 ## Convert `.ply` to `.bin`
-Usage:
 
 Alter ```INPUT_DIR``` and ```OUTPUT_DIR``` variables to be the path to .ply input folder, and the output folder respectively.
 
