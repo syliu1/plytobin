@@ -1,6 +1,6 @@
 ## PLY to BIN Converter
 
-Conver ply files to bin files
+Convert ply files to bin files
 
 ## Requirements
 
@@ -10,16 +10,13 @@ The code requires the PCL library to be installed (https://pointclouds.org/downl
 
 Ensure all ply files are in the same folder accessible by this repo.
 
-## Convert `.ply` to `.pcd`
+## Convert `.ply` to `.bin`
 Usage:
 
-```bash
-python ply2pcd.py [PLY_INPUT_PATH] [PCD_OUTPUT_PATH]
-```
+Alter ```python
+ INPUT_DIR``` and ```python
+ OUTPUT_DIR``` variables to be the path to .ply input folder, and the output folder respectively.
 
-## convert `.pcd` to `.bin`
-
-Usage:  
 ```bash
-python ply2pcd.py [PCD_INPUT_PATH] [BIN_OUTPUT_PATH]
+python ply2bin.py 
 ```
